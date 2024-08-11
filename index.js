@@ -8,6 +8,8 @@ const app = express();
 const port = 5505;
 
 // Middleware
+app.options('*', cors()); // Enable pre-flight requests for all routes
+
 app.use(cors({
     origin: ['http://localhost:3000', 'https://vishveshwaran-quizwebapp.vercel.app/'], 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
