@@ -9,7 +9,7 @@ const port = 5505;
 
 // Middleware
 app.use(cors({
-    origin: ['http://localhost:3000', 'https://vishveshwaran-quizapp.vercel.app/index.html'], 
+    origin: ['http://localhost:3000', 'https://vishveshwaran-quizwebapp.vercel.app/'], 
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
     credentials: true }
 ));
