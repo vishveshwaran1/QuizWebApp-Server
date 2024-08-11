@@ -8,13 +8,13 @@ const app = express();
 const port = 5505;
 
 // Middleware
-app.options('*', cors()); // Enable pre-flight requests for all routes
-
-app.use(cors({
-    origin: ['http://localhost:3000', 'https://vishveshwaran-quizwebapp.vercel.app/'], 
+const corsOptions = {
+    origin: ['https://vishveshwaran-quizwebapp.vercel.app', 'http://localhost:3000'],
     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    credentials: true }
-));
+    credentials: true, 
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 
 const uri = 'mongodb+srv://Vichu:Vichu@quizwebapp.re8ld.mongodb.net/?retryWrites=true&w=majority&appName=QuizWebApp';
@@ -297,7 +297,7 @@ app.post("/submit-quiz/:id", async (req, res) => {
         res.status(500).json({ message: "Internal server error" });
     }
 });
-
+app.options('*', cors(corsOptions));
 // Start Server and Add Default Quizzes
 app.listen(port, async () => {
     console.log(`Server running on http://localhost:${port}`);
