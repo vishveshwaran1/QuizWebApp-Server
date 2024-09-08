@@ -123,7 +123,7 @@ const addDefaultQuizzes = async () => {
                 },
                 {
                     question: "Choose the correct HTML element for the largest heading:",
-                    options: ["<heading>", "<h6>", "<head>", "<h1>"],
+                    options: ["heading tag", "h6 tag", "head tag", "h1 tag"],
                     correct: 3
                 }
             ],
